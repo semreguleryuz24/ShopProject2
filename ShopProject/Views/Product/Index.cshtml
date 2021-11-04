@@ -1,0 +1,35 @@
+﻿@using System.Collections.Generic;
+@model  List<ShopProject.Models.User>
+
+<h2>Index</h2>
+<hr />
+
+
+<ul>
+
+    @foreach (var user in @Model)
+    {
+        <li>
+           Adı: @user.UserName   Parolası: @user.Password
+        </li>
+
+        foreach (var item in user.UserProducts)
+        {
+
+            <li>
+               Ürün Adı: @item.Product.ProductName
+            </li>
+            <li>
+              Ürün UserAdı: @item.Product.UserProducts
+            </li>
+            <li>
+              Ürün StokAdedi: @item.Product.StockAccount
+            </li>
+            <li>
+               ürün Fiyatı: @item.Product.Price
+            </li>
+            
+        }
+
+    }
+</ul>
